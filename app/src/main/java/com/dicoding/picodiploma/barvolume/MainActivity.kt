@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.barvolume
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -50,6 +51,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
             tvResult.text = volume.toString()
+
+            val intentWithData = Intent(this, MoveActivity::class.java)
+            val question =  "$inputLength X $inputWidth X $inputHeight \n = "
+            intentWithData.putExtra("KEY_QUESTION", question)
+            intentWithData.putExtra("KEY_ANSWER", volume)
+            startActivity(intentWithData)
         }
     }
 
