@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             val intentWithData = Intent(this, MoveActivity::class.java)
             val question =  "$inputLength X $inputWidth X $inputHeight \n = "
-            intentWithData.putExtra("KEY_QUESTION", question)
-            intentWithData.putExtra("KEY_ANSWER", volume)
+            intentWithData.putExtra(MoveActivity.KEY_QUESTION, question)
+            intentWithData.putExtra(MoveActivity.KEY_ANSWER, volume)
             startActivity(intentWithData)
         }
     }
